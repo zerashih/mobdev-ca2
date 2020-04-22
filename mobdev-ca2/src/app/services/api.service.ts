@@ -6,11 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
+    baseUrl = 'https://www.breakingbadapi.com/api';
+    
+
     constructor(private http: HttpClient) { }
 
 
-    getEpisodes() {
-        return this.http.get('https://www.breakingbadapi.com/api/episodes')
+    getEpisodes(offset = 0) {
+        return this.http.get(`${this.baseUrl}/episodes`)
     }
 
     getEpisode(id) {
