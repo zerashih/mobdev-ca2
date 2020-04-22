@@ -30,10 +30,10 @@ export class ApiService {
     }
 
     getQuote(id) {
-        return this.http.get(`https://www.breakingbadapi.com/api/episodes/${id}`)
+        return this.http.get(`https://www.breakingbadapi.com/api/quotes/${id}`)
     }
 
     getDeaths() {
-        return this.http.get('https://www.breakingbadapi.com/api/deaths')
+        return this.http.get('https://www.breakingbadapi.com/api/death-count?name=Gustavo+Fring')
     }
 }
