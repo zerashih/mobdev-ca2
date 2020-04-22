@@ -29,4 +29,8 @@
       Release Date: {{ episode.air_date }}
     </ion-item>
   </ion-card>
+
+<ion-button (click)="handleLike()">{{LikeValue}} LIKE!</ion-button>
+<ion-button (click)="handleDislike()">{{DislikeValue}} DISLIKE!</ion-button>
+
 </ion-content>

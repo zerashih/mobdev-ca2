@@ -22,10 +22,10 @@
       <ion-icon name="calendar" slot="start"></ion-icon>
       Occupation: {{ character.occupation }}
     </ion-item>
-    <ion-item class="movie-info" lines="none">
-      <ion-icon name="calendar" slot="start"></ion-icon>
-      Image: {{ character.img }}
-    </ion-item>
   </ion-card>
+
+  <ion-button (click)="handleLike()">{{LikeValue}} LIKE!</ion-button>
+  <ion-button (click)="handleDislike()">{{DislikeValue}} DISLIKE!</ion-button>
+
 
 </ion-content>
