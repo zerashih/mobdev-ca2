@@ -10,20 +10,20 @@
 
 <ion-content padding>
 	<ion-card *ngIf="character" class="movie-card">
-		<ion-card-header>character {{ character.name }}: {{ character.name }}</ion-card-header>
+		<ion-card-header>Character: </ion-card-header>
 		<ion-card-content>
-			{{ character.name }}
+			Name: {{ character.name }}
 		</ion-card-content>
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="episode" slot="start"></ion-icon>
+			<ion-icon name="person-outline" slot="start"></ion-icon>
 			Birthday: {{ character.birthday }}
 		</ion-item>
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="calendar" slot="start"></ion-icon>
+			<ion-icon name="star-outline" slot="start"></ion-icon>
 			Occupation: {{ character.occupation }}
 		</ion-item>
 		<ion-item class="movie-info" lines="none">
-			<ion-icon name="calendar" slot="start"></ion-icon>
+			<ion-icon name="image-outline" slot="start"></ion-icon>
 			Image: {{ character.img }}
 		</ion-item>
 	</ion-card>
