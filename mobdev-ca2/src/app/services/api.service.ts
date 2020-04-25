@@ -12,7 +12,7 @@ export class ApiService {
     constructor(private http: HttpClient) { }
 
 
-    getEpisodes(offset = 0) {
+    getEpisodes() {
         return this.http.get(`${this.baseUrl}/episodes`)
     }
 
