@@ -1,18 +1,19 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Death Count</ion-title>
-     <ion-searchbar placeholder="Search Death" [(ngModel)]="queryText" (ionInput)="update()" ></ion-searchbar>
+    
   </ion-toolbar>
  
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+ <ion-searchbar placeholder="Search Death" [(ngModel)]="query" (ionInput)="search($event)" clearInput ></ion-searchbar>
 
 	<ion-list>
 		<ion-item button detail lines="inset" *ngFor="let death of deaths | async" (click)="openDetails(death)">
-        Season: {{death.season}}
-        Death cause: {{death.cause}}
-        Death character: {{ death.death }}
+        <!-- Season: {{death.season}}
+        Death cause: {{death.cause}} -->
+        {{ death.death }}
 		</ion-item>
 	</ion-list>
 </ion-content>

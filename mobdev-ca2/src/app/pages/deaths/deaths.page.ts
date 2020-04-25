@@ -11,18 +11,28 @@ import { ApiService } from '../../services/api.service';
 export class DeathsPage implements OnInit {
 
     deaths: Observable<any>;
+    query: String;
+    
 
-    constructor(private router: Router, private api: ApiService) { }
+    constructor(private router: Router, private api: ApiService) { 
 
-    //  onSearchChange(event){
-    //      let value = event.detail.value;
+        this.query = '';
+    }
 
-    //      if(value == '' ){
-    //          return;
-    //      }
-         
+    searach(event){
+        let val = event.target.value;
+        if(val && val.trim() != ''){
+            return this.openDetails;
 
-    //  }
+        }
+
+    }
+
+
+
+    // serach(event){
+    //     console.log(event);
+    // }
 
 
     ngOnInit() {
@@ -33,8 +43,10 @@ export class DeathsPage implements OnInit {
     }
 
     openDetails(death) {
-        let deathId = death.season & death.cause & death.death;
+        let deathId = death.death;
         this.router.navigateByUrl(`/tabs/deaths/${deathId}`);
     }
+
+    
 
 }
