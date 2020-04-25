@@ -6,7 +6,21 @@
 <ion-content>
     <ion-list>
         <ion-item button detail lines="inset" *ngFor="let episode of episodes | async" (click)="openDetails(episode)">
-        {{ episode.title }}
+        <ion-label>
+        <h2 text-capitalize>  {{ episode.title }} </h2>
+        <p>{{ episode.id}}</p>
+        </ion-label>
         </ion-item>
     </ion-list>
+
+    <!-- 
+   *Infinite scroll code-
+   *Code Resource: https://www.youtube.com/watch?v=NBeExE9dvR0
+   Author:Simon Grimm
+  -->
+
+    <!-- <ion-infinite-scroll threshold="10%" (ionInfinite)= "loadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more episodes...">
+    </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
 </ion-content>

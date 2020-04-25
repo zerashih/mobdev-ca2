@@ -9,6 +9,7 @@
 </ion-header>
 
 <ion-content padding>
+<<<<<<< HEAD
 	<ion-card *ngIf="character" class="movie-card">
 		<ion-card-header>character {{ character.name }}: {{ character.name }}</ion-card-header>
 		<ion-card-content>
@@ -29,3 +30,25 @@
 	</ion-card>
 
 </ion-content>
+=======
+<ion-card *ngIf="character" class="movie-card">
+    <ion-card-header>character {{ character.name }}: {{ character.name }}</ion-card-header>
+    <ion-card-content>
+      {{ character.name }}
+    </ion-card-content>
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="episode" slot="start"></ion-icon>
+      Birthday: {{ character.birthday }}
+    </ion-item>
+    <ion-item class="movie-info" lines="none">
+      <ion-icon name="calendar" slot="start"></ion-icon>
+      Occupation: {{ character.occupation }}
+    </ion-item>
+  </ion-card>
+
+  <ion-button (click)="handleLike()">{{LikeValue}} LIKE!</ion-button>
+  <ion-button (click)="handleDislike()">{{DislikeValue}} DISLIKE!</ion-button>
+
+
+</ion-content>
+>>>>>>> f066d25248f1df0746ac2d36d2f7c23c8e093ac4
