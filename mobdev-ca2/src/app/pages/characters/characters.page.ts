@@ -14,20 +14,36 @@ export class CharactersPage implements OnInit {
 
     scrollChar = [];
     offset = 0;
+    maximumOffset = 5;
    
 
     constructor(private router: Router, private api: ApiService, private http: HttpClient) { 
      this.loadCharacters();
     }
 
-    loadCharacters(){
+    loadCharacters(event?){
         this.http.get(`https://www.breakingbadapi.com/api/characters?limit=10&offset=${this.offset}`)
         .subscribe(res => {
             console.log(res);
             this.scrollChar = this.scrollChar.concat(['limit']);
-        })
-    }
 
+            if (event){
+                event.target.complete();
+            } 
+
+        });
+    }
+    
+    loadChar(event){
+        console.log(event);
+        this.offset++;
+        this.loadCharacters(event);
+
+        if (this.offset === this.maximumOffset){
+            event.target.disabled = true;
+        }
+
+    }
 
 
     ngOnInit() {
