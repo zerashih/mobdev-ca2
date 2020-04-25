@@ -14,15 +14,15 @@ export class DeathsPage implements OnInit {
 
     constructor(private router: Router, private api: ApiService) { }
 
-     onSearchChange(event){
-         let value = event.detail.value;
+    //  onSearchChange(event){
+    //      let value = event.detail.value;
 
-         if(value == '' ){
-             return;
-         }
+    //      if(value == '' ){
+    //          return;
+    //      }
          
 
-     }
+    //  }
 
 
     ngOnInit() {

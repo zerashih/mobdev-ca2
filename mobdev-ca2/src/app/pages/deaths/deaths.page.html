@@ -1,11 +1,13 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Death Count</ion-title>
+     <ion-searchbar placeholder="Search Death" [(ngModel)]="queryText" (ionInput)="update()" ></ion-searchbar>
   </ion-toolbar>
+ 
 </ion-header>
 
 <ion-content>
-<ion-searchbar aria-placeholder="Search" (ionChange)= "onSearchChange($event)" ></ion-searchbar>
+
 	<ion-list>
 		<ion-item button detail lines="inset" *ngFor="let death of deaths | async" (click)="openDetails(death)">
         Season: {{death.season}}
