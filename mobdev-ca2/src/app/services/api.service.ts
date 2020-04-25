@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+//import { map } from 
 
 @Injectable({
     providedIn: 'root'
@@ -39,4 +40,13 @@ export class ApiService {
     getDeaths() {
         return this.http.get('https://www.breakingbadapi.com/api/deaths')
     }
+
+    // findDeath(search){
+    //     return this.http.get(`${this.baseUrl}/deaths`).pipe(
+    //         map(deaths =>{
+
+    //         })
+    //     )
+
+    //}
 }

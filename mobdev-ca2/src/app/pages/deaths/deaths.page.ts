@@ -14,6 +14,17 @@ export class DeathsPage implements OnInit {
 
     constructor(private router: Router, private api: ApiService) { }
 
+     onSearchChange(event){
+         let value = event.detail.value;
+
+         if(value == '' ){
+             return;
+         }
+         
+
+     }
+
+
     ngOnInit() {
         this.deaths = this.api.getDeaths();
         this.deaths.subscribe(data => {
@@ -22,7 +33,7 @@ export class DeathsPage implements OnInit {
     }
 
     openDetails(death) {
-        let deathId = death.death;
+        let deathId = death.season & death.cause & death.death;
         this.router.navigateByUrl(`/tabs/deaths/${deathId}`);
     }
 

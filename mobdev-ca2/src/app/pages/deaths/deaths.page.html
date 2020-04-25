@@ -5,9 +5,12 @@
 </ion-header>
 
 <ion-content>
+<ion-searchbar aria-placeholder="Search" (ionChange)= "onSearchChange($event)" ></ion-searchbar>
 	<ion-list>
 		<ion-item button detail lines="inset" *ngFor="let death of deaths | async" (click)="openDetails(death)">
-			{{ death.death }}
+        Season: {{death.season}}
+        Death cause: {{death.cause}}
+        Death character: {{ death.death }}
 		</ion-item>
 	</ion-list>
 </ion-content>
