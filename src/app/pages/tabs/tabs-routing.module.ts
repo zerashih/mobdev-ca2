@@ -53,9 +53,19 @@ const routes: Routes = [
                         loadChildren: () => import('../deaths/deaths.module').then(m => m.DeathsPageModule)
                     }
                 ]
+            },
+            {
+                path: 'camera',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => import('../camera/cam.module').then(m => m.CamPageModule)
+                    }
+                ]
             }
         ]
     },
+    
     {
         path: '',
         redirectTo: '/tabs/episodes',
